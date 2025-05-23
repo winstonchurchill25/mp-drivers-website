@@ -1,7 +1,3 @@
-nav {
-  position: relative;
-}
-
 /* Reset styles */
 * {
   margin: 0;
@@ -16,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header */
 header {
   background-color: #111;
   padding: 20px 0;
@@ -24,19 +21,20 @@ header {
 
 .container {
   width: 90%;
-  position: relative;
   max-width: 1200px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  height: 185px;
+  height: 150px;
   width: auto;
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
@@ -49,7 +47,7 @@ nav a {
   font-weight: bold;
 }
 
-/* Hero with background image */
+/* Hero Section */
 .hero {
   background: url('images/hero-bg.jpg') no-repeat center center/cover;
   color: #fff;
@@ -64,7 +62,7 @@ nav a {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -84,17 +82,16 @@ nav a {
   color: #ccc;
 }
 
-/* Section layout */
+/* Section Base */
 .section {
   background-color: #000;
   color: #fff;
   padding: 80px 20px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 2rem;
   text-align: left;
   max-width: 1200px;
   margin: 0 auto 60px auto;
@@ -103,26 +100,55 @@ nav a {
 .section img {
   width: 100%;
   max-width: 420px;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   flex: 1 1 350px;
-  object-fit: cover;
 }
 
-.text-content {
-  flex: 1 1 400px;
+/* Services Section */
+.services {
+  background-color: #000;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-.text-content h2 {
+.services-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.services h2 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-.text-content p {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  max-width: 600px;
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.service-card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 25px 20px;
+  flex: 1 1 300px;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #ccc;
 }
 
 /* Testimonials */
@@ -148,12 +174,14 @@ nav a {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  align-items: stretch;
 }
 
 .testimonial-card {
   background-color: #111;
   border-radius: 12px;
   padding: 20px;
+  flex: 1 1 300px;
   max-width: 300px;
   text-align: left;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
@@ -161,7 +189,6 @@ nav a {
 
 .testimonial-card p {
   font-size: 1rem;
-  line-height: 1.5;
   color: #eee;
 }
 
@@ -172,7 +199,7 @@ nav a {
   font-style: italic;
 }
 
-/* CTA */
+/* CTA Section */
 .cta {
   background-color: #1a1a1a;
   padding: 60px 20px;
@@ -207,166 +234,7 @@ nav a {
   background-color: #f0f0f0;
 }
 
-footer {
-  background-color: #111;
-  color: #666;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .section,
-  .services,
-  .promotions,
-  .testimonials,
-  .cta {
-    padding: 60px 16px;
-  }
-
-  .section {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .services-grid,
-  .testimonial-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .text-content,
-  .section img {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .service-card h3,
-  .testimonial-card p {
-    font-size: 1rem;
-  }
-
-  .cta-container h2 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .cta-btn {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-
-  footer {
-    padding: 16px;
-    font-size: 0.85rem;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-}
-
-
-  .text-content,
-  .section img {
-    flex: 1 1 100%;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .testimonial-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Services Section */
-.services {
-  background-color: #000;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.services-container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.service-card {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 25px 20px;
-  max-width: 300px;
-  width: 100%;
-  text-align: left;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-}
-
-.service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.service-card p {
-  font-size: 1rem;
-  color: #ccc;
-}
-
-/* Promotions Section */
+/* Promotions */
 .promotions {
   background-color: #1a1a1a;
   padding: 60px 20px;
@@ -395,8 +263,16 @@ footer {
   color: #aaa;
 }
 
-/* Mobile Adjustments */
+/* Footer */
+footer {
+  background-color: #111;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
 
+/* Responsive */
 @media (max-width: 768px) {
   .section,
   .services,
@@ -433,14 +309,8 @@ footer {
     font-size: 0.95rem;
   }
 
-  .service-card h3,
-  .testimonial-card p {
-    font-size: 1rem;
-  }
-
   .cta-container h2 {
     font-size: 1.4rem;
-    text-align: center;
   }
 
   .cta-btn {
@@ -451,42 +321,5 @@ footer {
   footer {
     padding: 16px;
     font-size: 0.85rem;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-}
-
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
   }
 }
