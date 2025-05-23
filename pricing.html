@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | MP Drivers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media (max-width: 768px) {
+      .services-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        text-align: center;
+      }
+
+      .service-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .service-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
+      <button class="menu-toggle">☰</button>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="lessons.html">Lessons</a></li>
+          <li><a href="theory.html">Theory</a></li>
+          <li><a href="pricing.html" class="active">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="services">
+    <div class="services-container">
+      <h2>Our Pricing</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>1 Hour Lesson</h3>
+          <p>£45</p>
+        </div>
+        <div class="service-card">
+          <h3>1.5 Hour Lesson</h3>
+          <p>£60</p>
+        </div>
+        <div class="service-card">
+          <h3>2 Hour Lesson</h3>
+          <p>£80</p>
+        </div>
+        <div class="service-card">
+          <h3>6 Hour Block</h3>
+          <p>£200</p>
+        </div>
+        <div class="service-card">
+          <h3>10 Hour Block</h3>
+          <p>£350 <br><small>+ 2 Hours Free</small></p>
+        </div>
+        <div class="service-card">
+          <h3>20 Hour Block</h3>
+          <p>£625</p>
+        </div>
+        <div class="service-card">
+          <h3>30 Hour Block</h3>
+          <p>£975</p>
+        </div>
+        <div class="service-card">
+          <h3>Car Hire (Driving Test)</h3>
+          <p>£135</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MP Drivers. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
