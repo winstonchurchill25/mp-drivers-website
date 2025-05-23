@@ -272,7 +272,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Mobile Nav Toggle */
+/* Mobile Nav Toggle Button */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -282,13 +282,6 @@ footer {
   margin-left: auto;
   cursor: pointer;
   z-index: 1001;
-}
-
-/* Show toggle only on mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
 }
 
 /* Responsive */
@@ -344,6 +337,10 @@ footer {
   footer {
     padding: 16px;
     font-size: 0.85rem;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   nav ul {
