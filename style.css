@@ -272,8 +272,24 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Mobile Nav Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  margin-left: auto;
+  cursor: pointer;
+  z-index: 1001;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .logo {
+    height: 80px;
+  }
+
   .section,
   .services,
   .promotions,
@@ -321,5 +337,24 @@ footer {
   footer {
     padding: 16px;
     font-size: 0.85rem;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
   }
 }

@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Mobile Navigation */
     .menu-toggle {
       display: none;
       font-size: 2rem;
@@ -17,9 +16,15 @@
       border: none;
       color: #fff;
       cursor: pointer;
+      z-index: 1001;
+      margin-left: auto;
     }
 
     @media (max-width: 768px) {
+      .logo {
+        height: 80px;
+      }
+
       nav ul {
         display: none;
         flex-direction: column;
@@ -28,7 +33,11 @@
         position: absolute;
         top: 100%;
         left: 0;
-        z-index: 999;
+        right: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        text-align: center;
       }
 
       nav ul.show {
@@ -46,7 +55,7 @@
   <!-- Header -->
 <header>
   <div class="container">
-    <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
+    <img src="images/logo.png" alt="MP Drivers Logo" class="logo" style="height: 150px; width: auto;" />
     <button class="menu-toggle">☰</button>
     <nav>
       <ul id="nav-links">
@@ -130,18 +139,7 @@
     <p>&copy; 2025 MP Drivers. All rights reserved.</p>
   </footer>
 
-  <!-- Toggle Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggleButton = document.querySelector(".menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-
-      toggleButton.addEventListener("click", function () {
-        navLinks.classList.toggle("show");
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 
 </body>
 </html>
