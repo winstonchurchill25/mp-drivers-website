@@ -113,8 +113,8 @@
         <!-- Step 3: Choose Preferred Date/Time -->
         <div class="form-step">
           <h2>Step 3: Preferred Date & Time</h2>
-          <input type="date" name="preferred_date" required>
-          <input type="time" name="preferred_time" required>
+          <input type="date" name="preferred_date" id="preferred_date" required pattern="\d{4}-\d{2}-\d{2}" title="DD/MM/YYYY" style="color-scheme: dark;">
+          <input type="time" name="preferred_time" id="preferred_time" required pattern="[0-9]{2}:[0-9]{2}" title="HH:MM" style="color-scheme: dark;">
           <button type="button" onclick="prevStep()">Back</button>
           <button type="button" onclick="nextStep()">Next</button>
         </div>
