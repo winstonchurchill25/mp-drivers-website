@@ -4,70 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MP Drivers | Learn to Drive</title>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      z-index: 1001;
-      margin-left: auto;
-    }
-
-    @media (max-width: 768px) {
-      .logo {
-        height: 80px;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        padding: 1rem 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        text-align: center;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
 </head>
 <body>
 
   <!-- Header -->
-<header>
-  <div class="container">
-    <img src="images/logo.png" alt="MP Drivers Logo" class="logo" style="height: 150px; width: auto;" />
-    <button class="menu-toggle">☰</button>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lessons</a></li>
-        <li><a href="#">Theory</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="container">
+      <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
+      <button class="menu-toggle">☰</button>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Lessons</a></li>
+          <li><a href="#">Theory</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -139,7 +96,7 @@
     <p>&copy; 2025 MP Drivers. All rights reserved.</p>
   </footer>
 
+  <!-- Script Link -->
   <script src="script.js"></script>
-
 </body>
 </html>
