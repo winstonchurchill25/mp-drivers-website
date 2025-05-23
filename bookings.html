@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Online | MP Drivers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .booking-form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .booking-form h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.2rem;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .booking-form input,
+    .booking-form select {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .booking-form button {
+      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .booking-form button:hover {
+      background-color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .booking-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
+      <button class="menu-toggle">☰</button>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="booking.html" class="active">BOOK ONLINE</a></li>
+          <li><a href="theory.html">PRACTICE</a></li>
+          <li><a href="pricing.html">PRICES</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="services">
+    <div class="booking-form">
+      <form id="bookingForm">
+
+        <!-- Step 1: Personal Details -->
+        <div class="form-step active">
+          <h2>Step 1: Your Details</h2>
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 2: Select Package -->
+        <div class="form-step">
+          <h2>Step 2: Choose a Package</h2>
+          <select name="package" required>
+            <option value="">-- Select a Package --</option>
+            <option>1 Hour Lesson - £45</option>
+            <option>1.5 Hour Lesson - £60</option>
+            <option>2 Hour Lesson - £80</option>
+            <option>6 Hour Block - £200</option>
+            <option>10 Hour Block - £350 (2 hrs free)</option>
+            <option>20 Hour Block - £625</option>
+            <option>30 Hour Block - £975</option>
+            <option>Car Hire (Test Day) - £135</option>
+          </select>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 3: Choose Preferred Date/Time -->
+        <div class="form-step">
+          <h2>Step 3: Preferred Date & Time</h2>
+          <input type="date" name="preferred_date" required>
+          <input type="time" name="preferred_time" required>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 4: Confirm and Pay -->
+        <div class="form-step">
+          <h2>Step 4: Confirm & Pay</h2>
+          <p style="text-align: center; color: #ccc;">Review your details and click below to proceed to payment.</p>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="submit">Proceed to Payment</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MP Drivers. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.form-step');
+
+    function showStep(index) {
+      steps.forEach((step, i) => step.classList.toggle('active', i === index));
+    }
+
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('This would redirect to payment and email booking details.');
+    });
+  </script>
+</body>
+</html>
