@@ -55,6 +55,14 @@
       background-color: #ddd;
     }
 
+    .summary {
+      background-color: #222;
+      padding: 1rem;
+      color: #fff;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+    }
+
     @media (max-width: 768px) {
       .booking-form {
         padding: 1.5rem;
@@ -111,18 +119,18 @@
         </div>
 
         <!-- Step 3: Choose Preferred Date/Time -->
-        <div class="form-step">
-          <h2>Step 3: Preferred Date & Time</h2>
-          <input type="date" name="preferred_date" id="preferred_date" required pattern="\d{4}-\d{2}-\d{2}" title="DD/MM/YYYY" style="color-scheme: dark;">
-          <input type="time" name="preferred_time" id="preferred_time" required pattern="[0-9]{2}:[0-9]{2}" title="HH:MM" style="color-scheme: dark;">
-          <button type="button" onclick="prevStep()">Back</button>
-          <button type="button" onclick="nextStep()">Next</button>
-        </div>
+<div class="form-step">
+  <h2>Step 3: Preferred Date & Time</h2>
+  <input type="date" name="preferred_date" id="preferred_date" required placeholder="DD/MM/YYYY" style="color-scheme: dark;">
+  <input type="time" name="preferred_time" id="preferred_time" required placeholder="HH:MM" style="color-scheme: dark;">
+  <button type="button" onclick="prevStep()">Back</button>
+  <button type="button" onclick="nextStep()">Next</button>
+</div>
 
         <!-- Step 4: Confirm and Pay -->
         <div class="form-step">
           <h2>Step 4: Confirm & Pay</h2>
-          <p style="text-align: center; color: #ccc;">Review your details and click below to proceed to payment.</p>
+          <div class="summary" id="summaryBox"></div>
           <button type="button" onclick="prevStep()">Back</button>
           <button type="submit">Proceed to Payment</button>
         </div>
@@ -141,6 +149,26 @@
 
     function showStep(index) {
       steps.forEach((step, i) => step.classList.toggle('active', i === index));
+
+      if (index === 3) {
+        const form = document.getElementById('bookingForm');
+        const summary = document.getElementById('summaryBox');
+        const name = form.elements['name'].value;
+        const email = form.elements['email'].value;
+        const phone = form.elements['phone'].value;
+        const pack = form.elements['package'].value;
+        const date = form.elements['preferred_date'].value;
+        const time = form.elements['preferred_time'].value;
+
+        summary.innerHTML = `
+          <strong>Name:</strong> ${name}<br>
+          <strong>Email:</strong> ${email}<br>
+          <strong>Phone:</strong> ${phone}<br>
+          <strong>Package:</strong> ${pack}<br>
+          <strong>Date:</strong> ${date}<br>
+          <strong>Time:</strong> ${time}<br>
+        `;
+      }
     }
 
     function nextStep() {
