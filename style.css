@@ -1,3 +1,7 @@
+nav {
+  position: relative;
+}
+
 /* Reset styles */
 * {
   margin: 0;
@@ -20,12 +24,12 @@ header {
 
 .container {
   width: 90%;
+  position: relative;
   max-width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* ✅ This is the key fix */
 }
 
 .logo {
@@ -212,7 +216,93 @@ footer {
 }
 
 /* Responsive */
-.text-content,
+
+@media (max-width: 768px) {
+  .section,
+  .services,
+  .promotions,
+  .testimonials,
+  .cta {
+    padding: 60px 16px;
+  }
+
+  .section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .services-grid,
+  .testimonial-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .text-content,
+  .section img {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .service-card h3,
+  .testimonial-card p {
+    font-size: 1rem;
+  }
+
+  .cta-container h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .cta-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 16px;
+    font-size: 0.85rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
+
+  .text-content,
   .section img {
     flex: 1 1 100%;
   }
@@ -229,6 +319,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+}
 
 /* Services Section */
 .services {
@@ -305,13 +396,6 @@ footer {
 }
 
 /* Mobile Adjustments */
-.hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
 
 @media (max-width: 768px) {
   .section,
@@ -369,7 +453,6 @@ footer {
     font-size: 0.85rem;
   }
 
-  /* MOBILE NAVIGATION (✅ Add this part) */
   .menu-toggle {
     display: block;
     font-size: 2rem;
@@ -389,9 +472,21 @@ footer {
     top: 100%;
     left: 0;
     z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   }
 
   nav ul.show {
     display: flex;
+  }
+}
+
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }
