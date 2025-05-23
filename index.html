@@ -8,6 +8,38 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Mobile Navigation */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -15,8 +47,9 @@
   <header>
     <div class="container">
       <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <nav>
-        <ul>
+        <ul id="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">Lessons</a></li>
           <li><a href="#">Theory</a></li>
@@ -47,7 +80,7 @@
           <p>Access DVSA-style mock exams and practice questions online.</p>
         </div>
         <div class="service-card">
-          <h3>🚘 Car Hire </h3>
+          <h3>🚘 Car Hire</h3>
           <p>Vehicle hire with instructor support on your test day.</p>
         </div>
       </div>
@@ -96,6 +129,14 @@
   <footer>
     <p>&copy; 2025 MP Drivers. All rights reserved.</p>
   </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>

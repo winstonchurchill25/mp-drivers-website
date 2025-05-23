@@ -211,13 +211,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .text-content,
+.text-content,
   .section img {
     flex: 1 1 100%;
   }
@@ -311,18 +305,68 @@ footer {
 }
 
 /* Mobile Adjustments */
-@media (max-width: 768px) {
-  .services-grid,
-  .testimonial-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero h1 {
+.hero h1 {
     font-size: 2.2rem;
   }
 
   .hero p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section,
+  .services,
+  .promotions,
+  .testimonials,
+  .cta {
+    padding: 60px 16px;
+  }
+
+  .section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .services-grid,
+  .testimonial-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .text-content,
+  .section img {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .service-card h3,
+  .testimonial-card p {
+    font-size: 1rem;
+  }
+
+  .cta-container h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .cta-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 16px;
+    font-size: 0.85rem;
   }
 }
