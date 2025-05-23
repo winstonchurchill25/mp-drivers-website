@@ -77,12 +77,12 @@
       <button class="menu-toggle">☰</button>
       <nav>
         <ul id="nav-links">
-            <li><a href="/mp-drivers-website/index.html">HOME</a></li>
-            <li><a href="/mp-drivers-website/bookings.html">BOOK ONLINE</a></li>
-            <li><a href="/mp-drivers-website/theory.html">PRACTICE</a></li>
-            <li><a href="/mp-drivers-website/pricing.html">PRICES</a></li>
-            <li><a href="/mp-drivers-website/contact.html" class="active">CONTACT US</a></li>
-          </ul>
+          <li><a href="/index.html">HOME</a></li>
+          <li><a href="/bookings.html" class="active">BOOK ONLINE</a></li>
+          <li><a href="/theory.html">PRACTICE</a></li>
+          <li><a href="/pricing.html">PRICES</a></li>
+          <li><a href="/contact.html">CONTACT US</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -119,13 +119,13 @@
         </div>
 
         <!-- Step 3: Choose Preferred Date/Time -->
-        <div class="form-step">
-          <h2>Step 3: Preferred Date & Time</h2>
-          <input type="date" name="preferred_date" id="preferred_date" required pattern="\d{4}-\d{2}-\d{2}" title="DD/MM/YYYY" style="color-scheme: dark;">
-          <input type="time" name="preferred_time" id="preferred_time" required pattern="[0-9]{2}:[0-9]{2}" title="HH:MM" style="color-scheme: dark;">
-          <button type="button" onclick="prevStep()">Back</button>
-          <button type="button" onclick="nextStep()">Next</button>
-        </div>
+<div class="form-step">
+  <h2>Step 3: Preferred Date & Time</h2>
+  <input type="date" name="preferred_date" id="preferred_date" required placeholder="DD/MM/YYYY" style="color-scheme: dark;">
+  <input type="time" name="preferred_time" id="preferred_time" required placeholder="HH:MM" style="color-scheme: dark;">
+  <button type="button" onclick="prevStep()">Back</button>
+  <button type="button" onclick="nextStep()">Next</button>
+</div>
 
         <!-- Step 4: Confirm and Pay -->
         <div class="form-step">
@@ -189,7 +189,6 @@
       e.preventDefault();
       alert('This would redirect to payment and email booking details.');
     });
-  <!-- Script Link -->
-  <script src="script.js"></script>
+  </script>
 </body>
 </html>
