@@ -344,19 +344,15 @@ footer {
   }
 
   nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    text-align: center;
-  }
+  display: none;
+  flex-direction: column;
+  background-color: #111;
+  width: 100%;
+  position: static; /* Changed from absolute */
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
 
   nav ul.show {
     display: flex;
