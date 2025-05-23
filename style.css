@@ -367,4 +367,30 @@ footer {
     padding: 16px;
     font-size: 0.85rem;
   }
+
+  /* MOBILE NAVIGATION (✅ Add this part) */
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
 }
