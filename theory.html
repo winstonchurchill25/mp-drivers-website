@@ -192,7 +192,13 @@
             optionsBox.innerHTML = '';
             feedbackBox.textContent = '';
             counter.textContent = '';
-            document.querySelector('.quiz-controls').innerHTML = `<button onclick="restartQuiz()">Restart Quiz</button>`;
+            const quizControls = document.querySelector('.quiz-controls');
+quizControls.innerHTML = '';
+
+const restartBtn = document.createElement('button');
+restartBtn.textContent = 'Restart Quiz';
+restartBtn.addEventListener('click', restartQuiz);
+quizControls.appendChild(restartBtn);
           }
         }
 
