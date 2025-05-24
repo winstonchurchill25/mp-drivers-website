@@ -97,8 +97,17 @@
   <footer>
     <p>&copy; 2025 MP Drivers. All rights reserved.</p>
   </footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-  <!-- Script Link -->
-  <script src="script.js"></script>
+    if (toggleButton && navLinks) {
+      toggleButton.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
 </body>
 </html>
