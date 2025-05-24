@@ -197,18 +197,33 @@
         }
 
         function restartQuiz() {
-          current = 0;
-          score = 0;
-          shuffle(questions);
-          document.querySelector('.quiz-controls').innerHTML = `
-            <button id="submitBtn">Submit</button>
-            <button id="nextBtn" disabled>Next</button>
-            <span id="questionCounter"></span>
-          `;
-          document.getElementById('submitBtn').addEventListener('click', submitAnswer);
-          document.getElementById('nextBtn').addEventListener('click', nextQuestion);
-          loadQuestion();
-        }
+  current = 0;
+  score = 0;
+  shuffle(questions);
+
+  const quizControls = document.querySelector('.quiz-controls');
+  quizControls.innerHTML = '';
+
+  const submitBtnNew = document.createElement('button');
+  submitBtnNew.id = 'submitBtn';
+  submitBtnNew.textContent = 'Submit';
+  quizControls.appendChild(submitBtnNew);
+
+  const nextBtnNew = document.createElement('button');
+  nextBtnNew.id = 'nextBtn';
+  nextBtnNew.textContent = 'Next';
+  nextBtnNew.disabled = true;
+  quizControls.appendChild(nextBtnNew);
+
+  const counterSpan = document.createElement('span');
+  counterSpan.id = 'questionCounter';
+  quizControls.appendChild(counterSpan);
+
+  submitBtnNew.addEventListener('click', submitAnswer);
+  nextBtnNew.addEventListener('click', nextQuestion);
+
+  loadQuestion();
+}
 
         shuffle(questions);
         loadQuestion();
