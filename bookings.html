@@ -190,5 +190,17 @@
       alert('This would redirect to payment and email booking details.');
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggleButton && navLinks) {
+      toggleButton.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
 </body>
 </html>
