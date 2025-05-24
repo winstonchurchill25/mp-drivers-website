@@ -86,9 +86,9 @@
         const questionBox = document.getElementById('questionBox');
         const optionsBox = document.getElementById('optionsBox');
         const feedbackBox = document.getElementById('feedbackBox');
-        const counter = document.getElementById('questionCounter');
-        const submitBtn = document.getElementById('submitBtn');
-        const nextBtn = document.getElementById('nextBtn');
+        let counter = document.getElementById('questionCounter');
+        let submitBtn = document.getElementById('submitBtn');
+        let nextBtn = document.getElementById('nextBtn');
 
         const questions = [
   { q: "When should you use your hazard warning lights while driving?", options: ["When you're double parked", "When driving in fog", "To warn traffic of a hazard ahead", "When stopped at traffic lights"], answer: 2 },
@@ -225,8 +225,14 @@ quizControls.appendChild(restartBtn);
   counterSpan.id = 'questionCounter';
   quizControls.appendChild(counterSpan);
 
-  submitBtnNew.addEventListener('click', submitAnswer);
-  nextBtnNew.addEventListener('click', nextQuestion);
+  // ✅ Reassign variables
+  submitBtn = document.getElementById('submitBtn');
+  nextBtn = document.getElementById('nextBtn');
+  counter = document.getElementById('questionCounter');
+
+  // ✅ Rebind listeners
+  submitBtn.addEventListener('click', submitAnswer);
+  nextBtn.addEventListener('click', nextQuestion);
 
   loadQuestion();
 }
