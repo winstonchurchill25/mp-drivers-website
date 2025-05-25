@@ -299,10 +299,9 @@ footer {
   }
 
   /* Hide desktop navbar on mobile */
-#nav-links {
-  display: none !important;
-}
-}
+  #nav-links {
+    display: none !important;
+  }
 
   .section,
   .services,
@@ -400,7 +399,7 @@ footer {
   .mobile-nav ul li a.active {
     color: #00ccff;
   }
-}
+} /* <-- End of media query */
 
 /* Hide mobile nav on desktop */
 @media (min-width: 769px) {
