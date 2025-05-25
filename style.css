@@ -400,3 +400,10 @@ nav ul#nav-links {
     color: #00ccff;
   }
 }
+
+/* Hide mobile nav on desktop */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}
