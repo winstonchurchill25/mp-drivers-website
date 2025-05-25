@@ -9,24 +9,36 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <a href="/mp-drivers-website/index.html">
-  <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
-</a>
-      <button class="menu-toggle">☰</button>
-      <nav>
-        <ul id="nav-links">
-          <li><a href="/mp-drivers-website/index.html">HOME</a></li>
-          <li><a href="/mp-drivers-website/bookings.html">BOOK ONLINE</a></li>
-          <li><a href="/mp-drivers-website/theory.html">THEORY PRACTICE</a></li>
-          <li><a href="/mp-drivers-website/pricing.html" class="active">PRICES</a></li>
-          <li><a href="/mp-drivers-website/contact.html">CONTACT US</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+ <!-- Header -->
+<header class="header">
+  <div class="container nav-container">
+    <a href="/mp-drivers-website/index.html">
+      <img src="images/logo.png" alt="MP Drivers Logo" class="logo" />
+    </a>
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <!-- Desktop Nav -->
+    <ul>
+      <li><a href="/mp-drivers-website/index.html" class="active">HOME</a></li>
+      <li><a href="/mp-drivers-website/bookings.html">BOOK ONLINE</a></li>
+      <li><a href="/mp-drivers-website/theory.html">THEORY PRACTICE</a></li>
+      <li><a href="/mp-drivers-website/pricing.html">PRICES</a></li>
+      <li><a href="/mp-drivers-website/contact.html">CONTACT US</a></li>
+    </ul>
+  </nav>
+  </div>
+
+  <!-- Mobile Slide-In Nav -->
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="/mp-drivers-website/index.html" class="active">HOME</a></li>
+      <li><a href="/mp-drivers-website/bookings.html">BOOK ONLINE</a></li>
+      <li><a href="/mp-drivers-website/theory.html">THEORY PRACTICE</a></li>
+      <li><a href="/mp-drivers-website/pricing.html">PRICES</a></li>
+      <li><a href="/mp-drivers-website/contact.html">CONTACT US</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Hero Section -->
   <section class="hero">
