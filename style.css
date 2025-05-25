@@ -140,6 +140,13 @@ nav a {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
+.service-card img.service-icon {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
+
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
