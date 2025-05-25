@@ -373,3 +373,21 @@ footer {
   padding: 1rem 0;
  }
 }
+
+.theory-page .menu-toggle {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+.theory-page .menu-toggle:focus,
+.theory-page .menu-toggle:active,
+.theory-page .menu-toggle:hover {
+  background-color: transparent !important;
+  outline: none;
+  color: #fff !important;
+}
