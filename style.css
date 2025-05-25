@@ -292,8 +292,24 @@ footer {
   color: #fff;
 }
 
+.hamburger {
+  display: none;
+  font-size: 3rem;  
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  margin-left: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+   .hamburger {
+    display: block;
+    font-size: 3rem; /* or larger if you want */
+  }
   .logo {
     height: 80px;
   }
