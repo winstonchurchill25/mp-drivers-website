@@ -99,15 +99,17 @@
   </footer>
    <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector(".menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    if (toggleButton && navLinks) {
-      toggleButton.addEventListener("click", function () {
-        navLinks.classList.toggle("show");
-      });
-    }
-  });
+  const toggleButton = document.querySelector(".menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  /* old toggle for ul.show (comment this block) */
+  /*
+  if (toggleButton && navLinks) {
+    toggleButton.addEventListener("click", function () {
+      navLinks.classList.toggle("show");
+    });
+  }
+  */
+});
 </script>
 </body>
 </html>
