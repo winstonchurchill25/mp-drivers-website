@@ -111,17 +111,21 @@
   </footer>
    <script>
   document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.querySelector(".menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  /* old toggle for ul.show (comment this block) */
-  /*
-  if (toggleButton && navLinks) {
-    toggleButton.addEventListener("click", function () {
-      navLinks.classList.toggle("show");
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+      document.body.classList.toggle("nav-open");
     });
-  }
-  */
-});
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileNav.classList.contains("show")) {
+        mobileNav.classList.remove("show");
+        document.body.classList.remove("nav-open");
+      }
+    });
+  });
 </script>
 </body>
 </html>
