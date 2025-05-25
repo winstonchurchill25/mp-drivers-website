@@ -273,25 +273,6 @@ footer {
 }
 
 /* Mobile Nav Toggle Button */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  margin-left: auto;
-  cursor: pointer;
-  z-index: 1001;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.menu-toggle:focus,
-.menu-toggle:active {
-  outline: none;
-  background-color: transparent;
-  color: #fff;
-}
-
 .hamburger {
   display: none;
   font-size: 3rem;  
@@ -311,7 +292,7 @@ footer {
     font-size: 3rem; /* or larger if you want */
   }
   .logo {
-    height: 80px;
+    height: 100px;
   }
 
   /* Hide desktop navbar on mobile */
