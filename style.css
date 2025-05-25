@@ -276,19 +276,13 @@ footer {
 .menu-toggle {
   display: none;
   font-size: 2rem;
-  background: none;
-  border: none;
-  color: #fff;
   margin-left: auto;
   cursor: pointer;
   z-index: 1001;
-}
-
-.menu-toggle {
-  -webkit-tap-highlight-color: transparent;
   background-color: transparent;
   border: none;
   color: #fff;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle:focus,
