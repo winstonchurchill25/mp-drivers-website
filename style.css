@@ -284,6 +284,20 @@ footer {
   z-index: 1001;
 }
 
+.menu-toggle {
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.menu-toggle:focus,
+.menu-toggle:active {
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .logo {
