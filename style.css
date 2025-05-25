@@ -299,9 +299,9 @@ footer {
   }
 
   /* Hide desktop navbar on mobile */
-  #nav-links {
-    display: none !important;
-  }
+  .desktop-nav {
+  display: none !important;
+}
 
   .section,
   .services,
@@ -403,7 +403,11 @@ footer {
 
 /* Hide mobile nav on desktop */
 @media (min-width: 769px) {
-  .mobile-nav {
+  .desktop-nav {
+    display: block !important;
+  }
+  .mobile-nav,
+  .hamburger {
     display: none !important;
   }
 }
