@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger");
   const mobileNav = document.getElementById("mobileNav");
+  const mobileBackdrop = document.getElementById("mobileBackdrop");
 
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener("click", function () {
-      mobileNav.classList.toggle("show");
-      document.body.classList.toggle("nav-open");
-    });
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.toggle("show");
+    mobileBackdrop.classList.toggle("show");
+    document.body.classList.toggle("nav-open");
+  });
 
-    // /* Close mobile nav when a link is clicked */
-    mobileNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", function () {
-        mobileNav.classList.remove("show");
-        document.body.classList.remove("nav-open");
-      });
-    });
+  mobileBackdrop.addEventListener("click", () => {
+    mobileNav.classList.remove("show");
+    mobileBackdrop.classList.remove("show");
+    document.body.classList.remove("nav-open");
+  });
 
-    /* Close on Escape key */
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && mobileNav.classList.contains("show")) {
-        mobileNav.classList.remove("show");
-        document.body.classList.remove("nav-open");
-      }
-    });
-  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileNav.classList.contains("show")) {
+      mobileNav.classList.remove("show");
+      mobileBackdrop.classList.remove("show");
+      document.body.classList.remove("nav-open");
+    }
+  });
 });
