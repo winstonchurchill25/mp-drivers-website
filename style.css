@@ -377,6 +377,26 @@ footer {
     opacity: 1;
   }
 
+  .mobile-backdrop {
+  display: none;  /* Start hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2); /* Or 0.4 for a darker look */
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+  .mobile-backdrop.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
   .mobile-nav ul {
     list-style: none;
     padding: 0;
