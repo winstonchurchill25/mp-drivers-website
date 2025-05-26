@@ -225,7 +225,7 @@
     const amount = getAmountFromPackage(serviceType);
 
     try {
-      const response = await fetch('https://YOUR-RENDER-BACKEND.onrender.com/api/book/create-payment-intent', {
+      const response = await fetch('https://mp-drivers-backend.onrender.com/api/book/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount, currency: 'gbp', bookingDetails })
