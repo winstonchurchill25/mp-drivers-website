@@ -98,12 +98,26 @@
     </footer>
 
     <script>
-      document.getElementById('contactForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Your message has been sent!');
-        this.reset();
-      });
-    </script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: this.name.value,
+      email: this.email.value,
+      subject: "Contact Enquiry",
+      message: this.message.value
+    };
+
+    fetch('https://YOUR_RENDER_BACKEND_URL/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message || 'Submitted successfully!'))
+    .catch(err => alert('Error: ' + err.message));
+  });
+</script>
     <script>
   document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
