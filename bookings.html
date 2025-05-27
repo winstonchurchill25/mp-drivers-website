@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://js.stripe.com/v3/"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Online | MP Drivers</title>
@@ -140,6 +141,8 @@
         <div class="form-step">
           <h2>Step 4: Confirm & Pay</h2>
           <div class="summary" id="summaryBox"></div>
+          <div id="card-element" style="margin: 1.5rem 0;"></div>
+          <div id="card-errors" style="color: red; margin-bottom: 1.5rem;"></div>
           <button type="button" onclick="prevStep()">Back</button>
           <button type="submit">Proceed to Payment</button>
         </div>
@@ -273,6 +276,79 @@
         document.body.classList.remove("nav-open");
       }
     });
+  });
+</script>
+  <script>
+  const stripe = Stripe("pk_test_51RT9TECdm8SRotU0MgJG0059zZ4CMkJ1DmwAKtevRVCjEXN8soTs9w7KbrKdxRBOEcOf0fctFuxy92otRodXljg300Hr0nNh9u");
+  const elements = stripe.elements();
+  const card = elements.create("card");
+  card.mount("#card-element");
+
+  card.on("change", (event) => {
+    const displayError = document.getElementById("card-errors");
+    displayError.textContent = event.error ? event.error.message : "";
+  });
+
+  document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.elements['name'].value;
+    const email = form.elements['email'].value;
+    const phone = form.elements['phone'].value;
+    const serviceType = form.elements['package'].value;
+    const date = form.elements['preferred_date'].value;
+    const time = form.elements['preferred_time'].value;
+
+    const bookingDetails = { name, email, phone, serviceType, date, time };
+    const amount = getAmountFromPackage(serviceType);
+
+    try {
+      const response = await fetch('https://mp-drivers-backend.onrender.com/api/book/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount, currency: 'gbp', bookingDetails })
+      });
+
+      const data = await response.json();
+
+      if (!data.clientSecret) throw new Error("No client secret received");
+
+      const result = await stripe.confirmCardPayment(data.clientSecret, {
+        payment_method: {
+          card,
+          billing_details: {
+            name,
+            email
+          }
+        }
+      });
+
+      if (result.error) {
+        document.getElementById("card-errors").textContent = result.error.message;
+      } else {
+        const confirmRes = await fetch('https://mp-drivers-backend.onrender.com/api/book/confirm-booking', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            paymentIntentId: result.paymentIntent.id,
+            bookingDetails
+          })
+        });
+
+        const confirmData = await confirmRes.json();
+        if (confirmData.success) {
+          alert("Booking confirmed! Confirmation sent to email.");
+          form.reset();
+          location.reload();
+        } else {
+          alert("Payment succeeded, but booking confirmation failed.");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Try again.");
+    }
   });
 </script>
 </body>
