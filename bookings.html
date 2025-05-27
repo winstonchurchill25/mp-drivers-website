@@ -144,7 +144,7 @@
           <div id="card-element" style="margin: 1.5rem 0;"></div>
           <div id="card-errors" style="color: red; margin-bottom: 1.5rem;"></div>
           <button type="button" onclick="prevStep()">Back</button>
-          <button type="submit">Proceed to Payment</button>
+          <button type="submit">Pay Now</button>
         </div>
 
       </form>
@@ -237,7 +237,7 @@
       const data = await response.json();
 
       if (data.clientSecret) {
-        alert('Booking created! Now redirecting to payment...');
+        alert('Just a moment - confirming your booking...');
         console.log('Client Secret:', data.clientSecret);
       } else {
         alert('Something went wrong with your booking.');
@@ -352,7 +352,7 @@ const card = elements.create("card", { style });
 
         const confirmData = await confirmRes.json();
         if (confirmData.success) {
-          alert("Booking confirmed! Confirmation sent to email.");
+          alert("Thank you for booking with us. You'll receive an email with the details shortly.");
           form.reset();
           location.reload();
         } else {
