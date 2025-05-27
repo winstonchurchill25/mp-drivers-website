@@ -281,7 +281,21 @@
   <script>
   const stripe = Stripe("pk_test_51RT9TECdm8SRotU0MgJG0059zZ4CMkJ1DmwAKtevRVCjEXN8soTs9w7KbrKdxRBOEcOf0fctFuxy92otRodXljg300Hr0nNh9u");
   const elements = stripe.elements();
-  const card = elements.create("card");
+  const style = {
+  base: {
+    color: '#ffffff',
+    fontFamily: 'Poppins, sans-serif',
+    fontSize: '16px',
+    '::placeholder': {
+      color: '#cccccc',
+    },
+  },
+  invalid: {
+    color: '#ff4d4d',
+  },
+};
+
+const card = elements.create("card", { style });
   card.mount("#card-element");
 
   card.on("change", (event) => {
