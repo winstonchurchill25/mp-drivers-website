@@ -366,19 +366,24 @@ const card = elements.create("card", { style });
           })
         });
 
-        const confirmData = await confirmRes.json();
-        if (confirmData.success) {
-          alert("Thank you for booking with us. You'll receive an email with the details shortly.");
-          form.reset();
-          location.reload();
-        } else {
-          alert("Payment succeeded, but booking confirmation failed.");
-        }
+        cconst confirmData = await confirmRes.json();
+
+if (confirmData.success) {
+  showToast("✅ Booking confirmed! We'll email you the details shortly.");
+
+  // Reset form and reload after short delay
+  setTimeout(() => {
+    form.reset();
+    location.reload();
+  }, 4000);
+} else {
+  showToast("⚠️ Payment succeeded, but booking confirmation failed.", 5000);
+}
       }
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong. Try again.");
-    }
+   } catch (err) {
+  console.error(err);
+  showToast("❌ Something went wrong. Please try again.");
+}
   });
 </script>
 </body>
