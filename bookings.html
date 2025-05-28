@@ -225,21 +225,6 @@
     toast.remove();
   }, duration);
 }
-
-try {
-  // assuming `data` is already defined, e.g., from:
-  // const data = await response.json();
-
-  if (data.clientSecret) {
-    showToast("Just a moment – confirming your booking...");
-    console.log('Client Secret:', data.clientSecret);
-  } else {
-    showToast("Something went wrong with your booking. Please try again.", 5000);
-  }
-} catch (err) {
-  console.error(err);
-  showToast("Booking failed.", 5000);
-}
 </script>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
