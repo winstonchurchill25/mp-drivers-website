@@ -306,6 +306,8 @@ const card = elements.create("card", { style });
 
       if (!data.clientSecret) throw new Error("No client secret received");
 
+      showToast("Just a moment – confirming your booking...");
+
       const result = await stripe.confirmCardPayment(data.clientSecret, {
         payment_method: {
           card,
