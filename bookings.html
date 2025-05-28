@@ -239,15 +239,16 @@
       const data = await response.json();
 
       if (data.clientSecret) {
-        alert('Just a moment - confirming your booking...');
-        console.log('Client Secret:', data.clientSecret);
-      } else {
-        alert('Something went wrong with your booking.');
-      }
+  showToast("Just a moment – confirming your booking...");
+  // OPTIONAL: add a delay or redirect logic here
+  console.log('Client Secret:', data.clientSecret);
+} else {
+  showToast("Something went wrong with your booking. Please try again.", 5000);
+}
     } catch (err) {
-      console.error(err);
-      alert('Failed to process booking.');
-    }
+  console.error(err);
+  showToast("Booking failed.", 5000);
+}
   });
 </script>
   <script>
