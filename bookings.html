@@ -366,7 +366,7 @@ const card = elements.create("card", { style });
           })
         });
 
-        cconst confirmData = await confirmRes.json();
+        const confirmData = await confirmRes.json();
 
 if (confirmData.success) {
   showToast("✅ Booking confirmed! We'll email you the details shortly.");
